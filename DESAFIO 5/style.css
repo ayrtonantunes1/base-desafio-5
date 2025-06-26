@@ -1,0 +1,126 @@
+/* Variáveis CSS para cores - Usando :root para organização */
+:root {
+    --cor-fundo-principal: #1163AD; /* Azul mais claro */
+    --cor-fundo-circulo-avatar: #0D47A1; /* Azul mais escuro */
+    --cor-borda-circulo-avatar: #18579E; /* Azul médio para borda */
+    --cor-texto-principal: white; 
+    --cor-fundo-campo: white;
+    --cor-icone-campo: #424242; /* Cor geral para textos em campos ou elementos escuros */
+    --cor-placeholder-campo: #9E9E9E;
+    --cor-botao-acessar: #4CAF50; /* Verde do botão "Acessar" */
+    --cor-botao-acessar-hover: #45a049; /* Verde mais escuro no hover do botão */
+    --cor-link-criar-conta: #9AD3AB; /* Nova cor verde clara para o link "Crie agora" */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--cor-fundo-principal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--cor-texto-principal);
+}
+
+.container-login {
+    background-color: var(--cor-fundo-circulo-avatar);
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px;
+}
+
+.circulo-avatar {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 30px auto;
+    overflow: hidden; /* Garante que a imagem não saia do círculo */
+}
+
+.imagem-avatar {
+    width: 100%; /* Faz a imagem preencher a largura do contêiner pai (.circulo-avatar) */
+    height: 100%; /* Faz a imagem preencher a altura do contêiner pai (.circulo-avatar) */
+    object-fit: cover; /* Recorta a imagem para preencher, mantendo a proporção */
+    border-radius: 50%; /* Garante que a imagem também tenha borda arredondada se for quadrada */
+}
+
+.grupo-entrada {
+    display: flex;
+    align-items: center;
+    background-color: var(--cor-fundo-campo);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.icone-campo {
+    width: 24px; /* Ajuste o tamanho da imagem do ícone conforme necessário */
+    height: 24px; /* Ajuste o tamanho da imagem do ícone conforme necessário */
+    margin-right: 10px;
+    object-fit: contain; /* Garante que a imagem se ajuste sem cortar */
+}
+
+.grupo-entrada input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    padding: 5px 0;
+    font-size: 16px;
+    color: var(--cor-icone-campo); /* Cor do texto do input */
+}
+
+.grupo-entrada input::placeholder {
+    color: var(--cor-placeholder-campo);
+}
+
+.link-esqueceu-senha {
+    display: block;
+    text-align: left;
+    color: var(--cor-texto-principal);
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 30px;
+    padding-left: 10px;
+}
+
+.link-esqueceu-senha:hover {
+    text-decoration: underline;
+}
+
+.botao-acessar {
+    background-color: var(--cor-botao-acessar);
+    color: var(--cor-texto-principal);
+    padding: 15px 0;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.botao-acessar:hover {
+    background-color: var(--cor-botao-acessar-hover);
+}
+
+.texto-criar-conta {
+    font-size: 14px;
+    color: var(--cor-texto-principal);
+}
+
+.texto-criar-conta a {
+    color: var(--cor-link-criar-conta); /* Usando a variável para a nova cor verde clara */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.texto-criar-conta a:hover {
+    text-decoration: underline;
+}
