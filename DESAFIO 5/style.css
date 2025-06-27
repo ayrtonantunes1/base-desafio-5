@@ -18,7 +18,8 @@
     --cor-link-secundario: #9AD3AB; /* Verde claro para links secundários */
 }
 
-/* Estilos Base / Comuns a Todas as Páginas */
+/* Estilos Base as Páginas */
+
 body {
     margin: 0;
     padding: 0;
@@ -29,6 +30,8 @@ body {
     align-items: center;
     min-height: 100vh;
     color: var(--cor-texto-claro);
+    padding: 15px;
+    box-sizing: border-box; 
 }
 
 /* Estilos para grupos de entrada (ícone + input) */
@@ -61,7 +64,7 @@ body {
     color: var(--cor-texto-campo);
 }
 
-/* Estilos de Label (cadastro) */
+/* Estilos de Label cadastro */
 .label-campo {
     display: block;
     color: var(--cor-texto-claro);
@@ -72,7 +75,8 @@ body {
     text-align: left;
 }
 
-/* Estilos para inputs de formulário (cadastro) */
+/* Estilos para inputs de formulário de cadastro */
+
 .formulario-cadastro input[type="text"],
 .formulario-cadastro input[type="date"],
 .formulario-cadastro input[type="email"],
@@ -93,14 +97,15 @@ body {
 }
 
 
-/* Estilos Específicos da Página de Login (index.html) */
+/* Estilos Específicos da Página de Login  */
+
 .container-login {
     background-color: var(--cor-fundo-container);
     padding: 40px 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 350px;
+    width: 350px; /* Largura padrão para maiores */
     max-width: 90%;
 }
 
@@ -177,16 +182,42 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 350px;
+    width: 350px; /* Largura padrão telas maiores */
     max-width: 90%;
+    position: relative;
+}
+
+/* Estilo para o botão VOLTAR (cadastro) */
+
+.botao-voltar {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    z-index: 10;
+    background-color: var(--cor-botao-primario); /* Fundo do botão */
+    color: var(--cor-texto-claro); /* Texto do botão */
+    padding: 8px 15px; /* Padding para um botão menor */
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    display: inline-block; /* Para que o padding e a largura funcionem */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+}
+
+.botao-voltar:hover {
+    background-color: var(--cor-botao-primario-hover);
 }
 
 .cabecalho-cadastro {
     margin-bottom: 30px;
+    margin-top: 20px;
 }
 
-.icone-cabecalho {
-    width: 250px;
+.icone-cabecalho { /* Ícone do cabeçalho de cadastro */
+    width: 250px; /* Tamanho padrão */
     height: auto;
     display: block;
     margin: 0 auto;
@@ -215,4 +246,89 @@ body {
 
 .botao-enviar:hover {
     background-color: var(--cor-botao-primario-hover);
+}
+
+
+
+/* Para telas menores que 768px  */
+
+@media (max-width: 768px) {
+    .container-login,
+    .container-cadastro {
+        width: 95%; /* Ocupa mais largura em telas menores */
+        padding: 30px 20px; /* Reduz um pouco o padding interno */
+    }
+
+    .circulo-avatar {
+        width: 100px; /* Diminui um pouco o avatar */
+        height: 100px;
+    }
+
+    .icone-cabecalho {
+        width: 200px; /* Diminui o ícone de cadastro */
+    }
+
+    .botao-voltar {
+        top: 10px; /* Ajusta a posição do botão voltar */
+        left: 10px;
+        font-size: 12px; /* Fonte um pouco menor */
+        padding: 6px 12px;
+    }
+
+    .link-esqueceu-senha,
+    .texto-criar-conta {
+        font-size: 13px; /* Fonte menor para textos de link */
+    }
+
+    .botao-acessar,
+    .botao-enviar {
+        font-size: 16px; /* Fonte menor para botões principais */
+        padding: 12px 0;
+    }
+}
+
+/* Para telas menores que 480px  */
+@media (max-width: 480px) {
+    .container-login,
+    .container-cadastro {
+        width: 100%; /* Ocupa largura total (com padding do body) */
+        border-radius: 0; /* Remove borda arredondada para ocupar a tela toda */
+        box-shadow: none; /* Remove sombra em celulares para um visual mais "app" */
+    }
+
+    /* Reduz ainda mais o padding do container para dispositivos muito pequenos */
+    .container-cadastro {
+        padding: 10px 15px; /* Padding menor */
+    }
+    .container-login {
+        padding: 25px 15px;
+    }
+
+    .circulo-avatar {
+        width: 80px; /* Avatar ainda menor */
+        height: 80px;
+        margin-bottom: 20px;
+    }
+
+    .icone-cabecalho {
+        width: 150px; /* Ícone de cadastro menor */
+    }
+
+    .grupo-entrada input,
+    .formulario-cadastro input[type="text"],
+    .formulario-cadastro input[type="date"],
+    .formulario-cadastro input[type="email"],
+    .formulario-cadastro input[type="password"] {
+        font-size: 14px; /* Fonte dos inputs menor */
+        padding: 10px;
+    }
+
+    .botao-voltar {
+        font-size: 11px; /* Fonte mínima para o botão voltar */
+        padding: 5px 10px;
+    }
+
+    .label-campo {
+        font-size: 12px; /* Fonte menor para labels */
+    }
 }
