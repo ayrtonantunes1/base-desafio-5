@@ -1,55 +1,37 @@
-/* Variáveis CSS para cores - Usando :root para organização */
+/* Variáveis CSS Globais e de Cores */
+
 :root {
-    --cor-fundo-principal: #1163AD; /* Azul mais claro */
-    --cor-fundo-circulo-avatar: #0D47A1; /* Azul mais escuro */
-    --cor-borda-circulo-avatar: #18579E; /* Azul médio para borda */
-    --cor-texto-principal: white; 
+    /* Cores de Fundo */
+    --cor-fundo-body: #18579E; /* Fundo principal da página */
+    --cor-fundo-container: #1163AD; /* Fundo dos containers de formulário */
+
+    /* Cores de Texto e Campos */
+    --cor-texto-claro: white;
     --cor-fundo-campo: white;
-    --cor-icone-campo: #424242; /* Cor geral para textos em campos ou elementos escuros */
-    --cor-placeholder-campo: #9E9E9E;
-    --cor-botao-acessar: #4CAF50; /* Verde do botão "Acessar" */
-    --cor-botao-acessar-hover: #45a049; /* Verde mais escuro no hover do botão */
-    --cor-link-criar-conta: #9AD3AB; /* Nova cor verde clara para o link "Crie agora" */
+    --cor-texto-campo: #747474; /* Cor do texto e placeholder dentro dos inputs */
+
+    /* Cores dos Botões */
+    --cor-botao-primario: #7CB37E; /* Verde dos botões principais */
+    --cor-botao-primario-hover: #45a049; /* Verde mais escuro no hover */
+
+    /* Cores de Links */
+    --cor-link-secundario: #9AD3AB; /* Verde claro para links secundários */
 }
 
+/* Estilos Base / Comuns a Todas as Páginas */
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: var(--cor-fundo-principal);
+    background-color: var(--cor-fundo-body);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    color: var(--cor-texto-principal);
+    color: var(--cor-texto-claro);
 }
 
-.container-login {
-    background-color: var(--cor-fundo-circulo-avatar);
-    padding: 40px 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    width: 350px;
-}
-
-.circulo-avatar {
-    width: 120px;
-    height: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto 30px auto;
-    overflow: hidden; /* Garante que a imagem não saia do círculo */
-}
-
-.imagem-avatar {
-    width: 100%; /* Faz a imagem preencher a largura do contêiner pai (.circulo-avatar) */
-    height: 100%; /* Faz a imagem preencher a altura do contêiner pai (.circulo-avatar) */
-    object-fit: cover; /* Recorta a imagem para preencher, mantendo a proporção */
-    border-radius: 50%; /* Garante que a imagem também tenha borda arredondada se for quadrada */
-}
-
+/* Estilos para grupos de entrada (ícone + input) */
 .grupo-entrada {
     display: flex;
     align-items: center;
@@ -59,11 +41,11 @@ body {
     padding: 10px;
 }
 
-.icone-campo {
-    width: 24px; /* Ajuste o tamanho da imagem do ícone conforme necessário */
-    height: 24px; /* Ajuste o tamanho da imagem do ícone conforme necessário */
+.icone-campo { /* Ícones dentro dos campos de input */
+    width: 24px;
+    height: 24px;
     margin-right: 10px;
-    object-fit: contain; /* Garante que a imagem se ajuste sem cortar */
+    object-fit: contain;
 }
 
 .grupo-entrada input {
@@ -72,17 +54,79 @@ body {
     flex-grow: 1;
     padding: 5px 0;
     font-size: 16px;
-    color: var(--cor-icone-campo); /* Cor do texto do input */
+    color: var(--cor-texto-campo);
 }
 
 .grupo-entrada input::placeholder {
-    color: var(--cor-placeholder-campo);
+    color: var(--cor-texto-campo);
+}
+
+/* Estilos de Label (cadastro) */
+.label-campo {
+    display: block;
+    color: var(--cor-texto-claro);
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+/* Estilos para inputs de formulário (cadastro) */
+.formulario-cadastro input[type="text"],
+.formulario-cadastro input[type="date"],
+.formulario-cadastro input[type="email"],
+.formulario-cadastro input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 12px 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: var(--cor-texto-campo);
+    background-color: var(--cor-fundo-campo);
+    outline: none;
+}
+
+.formulario-cadastro input::placeholder {
+    color: var(--cor-texto-campo);
+}
+
+
+/* Estilos Específicos da Página de Login (index.html) */
+.container-login {
+    background-color: var(--cor-fundo-container);
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px;
+    max-width: 90%;
+}
+
+.circulo-avatar {
+    width: 120px;
+    height: 120px;
+    background-color: var(--cor-fundo-container);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 30px auto;
+    overflow: hidden;
+}
+
+.imagem-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .link-esqueceu-senha {
     display: block;
     text-align: left;
-    color: var(--cor-texto-principal);
+    color: var(--cor-texto-claro);
     text-decoration: none;
     font-size: 14px;
     margin-bottom: 30px;
@@ -94,8 +138,8 @@ body {
 }
 
 .botao-acessar {
-    background-color: var(--cor-botao-acessar);
-    color: var(--cor-texto-principal);
+    background-color: var(--cor-botao-primario);
+    color: var(--cor-texto-claro);
     padding: 15px 0;
     border: none;
     border-radius: 5px;
@@ -107,20 +151,68 @@ body {
 }
 
 .botao-acessar:hover {
-    background-color: var(--cor-botao-acessar-hover);
+    background-color: var(--cor-botao-primario-hover);
 }
 
 .texto-criar-conta {
     font-size: 14px;
-    color: var(--cor-texto-principal);
+    color: var(--cor-texto-claro);
 }
 
 .texto-criar-conta a {
-    color: var(--cor-link-criar-conta); /* Usando a variável para a nova cor verde clara */
+    color: var(--cor-link-secundario);
     text-decoration: none;
     font-weight: bold;
 }
 
 .texto-criar-conta a:hover {
     text-decoration: underline;
+}
+
+/* Estilos Específicos da Página de Cadastro (cadastro.html) */
+
+.container-cadastro {
+    background-color: var(--cor-fundo-container);
+    padding: 10px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px;
+    max-width: 90%;
+}
+
+.cabecalho-cadastro {
+    margin-bottom: 30px;
+}
+
+.icone-cabecalho {
+    width: 250px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.formulario-cadastro {
+    text-align: left;
+}
+
+.botao-enviar {
+    background-color: var(--cor-botao-primario);
+    color: var(--cor-texto-claro);
+    padding: 15px 0;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.botao-enviar:hover {
+    background-color: var(--cor-botao-primario-hover);
 }
