@@ -1,0 +1,185 @@
+/* ==================================================================== */
+/* Variáveis CSS Globais e de Cores */
+/* ==================================================================== */
+:root {
+    /* Cores de Fundo */
+    --cor-fundo-body: #18579E; /* Fundo principal da página */
+    --cor-fundo-container: #1163AD; /* Fundo dos containers */
+
+    /* Cores de Texto e Campos */
+    --cor-texto-claro: white;
+    --cor-fundo-campo: white;
+    --cor-texto-campo: #747474; /* Cor do texto e placeholder nos inputs */
+
+    /* Cores dos Botões */
+    --cor-botao-primario: #7CB37E; /* Verde do botão "ENVIAR" */
+    --cor-botao-primario-hover: #45a049; /* Verde mais escuro no hover */
+}
+
+/* ==================================================================== */
+/* Estilos Base Páginas de Recuperação/Verificação */
+/* ==================================================================== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--cor-fundo-body);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--cor-texto-claro);
+}
+
+/* Estilos para campos de input genéricos */
+.campo-input-generico input[type="text"],
+.campo-input-generico input[type="password"] { /* Adicionado type="password" aqui */
+    width: calc(100% - 20px);
+    padding: 12px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: var(--cor-texto-campo);
+    background-color: var(--cor-fundo-campo);
+    outline: none;
+    margin-bottom: 20px;
+}
+
+.campo-input-generico input::placeholder {
+    color: var(--cor-texto-campo);
+}
+
+/* Estilos para o botão primário (ENVIAR) */
+.botao-primario {
+    background-color: var(--cor-botao-primario);
+    color: var(--cor-texto-claro);
+    padding: 15px 0;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.botao-primario:hover {
+    background-color: var(--cor-botao-primario-hover);
+}
+
+/* ==================================================================== */
+/* Estilos Específicos da Página "Encontrar Sua Conta" */
+/* ==================================================================== */
+.container-encontrar-conta {
+    background-color: var(--cor-fundo-container);
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px;
+    max-width: 90%;
+}
+
+.cabecalho-encontrar-conta {
+    margin-bottom: 20px;
+}
+
+.icone-cabecalho-busca { /* Ícone de homem com lupa */
+    width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.titulo-pagina { /* Título da página */
+    color: var(--cor-texto-claro);
+    font-size: 22px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.descricao-pagina { /* Descrição abaixo do título */
+    color: var(--cor-texto-claro);
+    font-size: 15px;
+    line-height: 1.4;
+    margin-bottom: 30px;
+}
+
+.campo-busca input[type="text"] { /* Input da busca */
+    margin-bottom: 20px;
+}
+
+
+/* ==================================================================== */
+/* Estilos Específicos da Página "Verificar Código de Segurança" */
+/* ==================================================================== */
+.container-verificar-codigo {
+    background-color: var(--cor-fundo-container);
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px;
+    max-width: 90%;
+}
+
+.cabecalho-verificar-codigo {
+    margin-bottom: 20px;
+}
+
+.icone-cabecalho-email { /* Ícone de email */
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.titulo-instrucao { /* Texto de instrução */
+    color: var(--cor-texto-claro);
+    font-size: 20px;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+.campo-codigo input[type="text"] { /* Input do código */
+    margin-bottom: 20px;
+}
+
+/* Estilos Específicos da Página "Crie Nova Senha" */
+
+.container-nova-senha {
+    background-color: var(--cor-fundo-container);
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px;
+    max-width: 90%;
+}
+
+.cabecalho-nova-senha {
+    margin-bottom: 20px;
+}
+
+.icone-cabecalho-senha { /* Ícone de cadeado com flechas */
+    width: 200px; /* Ajuste o tamanho conforme a imagem que você tiver */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.titulo-instrucao-nova-senha { /* Texto "Crie sua nova senha e anote..." */
+    color: var(--cor-texto-claro);
+    font-size: 20px;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+.campo-nova-senha input[type="password"] { /* Inputs de senha */
+    /* Herda de .campo-input-generico input[type="password"] */
+    margin-bottom: 20px; /* Espaço entre os campos de senha */
+}
